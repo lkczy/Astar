@@ -1,4 +1,7 @@
 import GameConfig from "./GameConfig";
+import Map from "./Map";
+import myArray from "./myArray";
+import Node from "./Node";
 class Main {
 	constructor() {
 		//根据IDE设置初始化引擎		
@@ -10,6 +13,7 @@ class Main {
 		Laya.stage.screenMode = GameConfig.screenMode;
 		Laya.stage.alignV = GameConfig.alignV;
 		Laya.stage.alignH = GameConfig.alignH;
+		Laya.stage.bgColor="#0fffff";
 		//兼容微信不支持加载scene后缀场景
 		Laya.URL.exportSceneToJson = GameConfig.exportSceneToJson;
 
@@ -18,6 +22,20 @@ class Main {
 		if (GameConfig.physicsDebug && Laya["PhysicsDebugDraw"]) Laya["PhysicsDebugDraw"].enable();
 		if (GameConfig.stat) Laya.Stat.show();
 		Laya.alertGlobalError = true;
+
+
+		let pointsArr:myArray=new Map().DrawMap();	//地图生成
+		
+		
+
+
+
+
+
+
+
+
+
 
 		//激活资源版本控制，version.json由IDE发布功能自动生成，如果没有也不影响后续流程
 		Laya.ResourceVersion.enable("version.json", Laya.Handler.create(this, this.onVersionLoaded), Laya.ResourceVersion.FILENAME_VERSION);

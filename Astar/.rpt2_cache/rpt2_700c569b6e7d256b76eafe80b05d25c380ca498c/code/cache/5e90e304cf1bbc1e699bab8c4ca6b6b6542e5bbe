@@ -1,0 +1,4 @@
+{
+  "code": "export default class Node {\r\n    constructor(xIndex, yIndex, isBarrier, rectSprite) {\r\n        this.parentNode = null;\r\n        this.isBarrier = false;\r\n        this.rectSprite = null;\r\n        this.xIndex = xIndex;\r\n        this.yIndex = yIndex;\r\n        this.isBarrier = isBarrier;\r\n        this.rectSprite = rectSprite;\r\n    }\r\n}\r\n",
+  "references": []
+}

@@ -1,0 +1,6 @@
+{
+  "code": "export default class myArray {\r\n    constructor(rows, cols, value) {\r\n        this.myArray = new Array();\r\n        this.rows = rows;\r\n        this.cols = cols;\r\n        this.initRows(rows);\r\n        this.initCols(cols, value);\r\n    }\r\n    getValue(rows, cols) {\r\n        if (rows < 0 || cols < 0 || rows > this.rows || cols > this.cols) {\r\n            return null;\r\n        }\r\n        return this.myArray[rows][cols];\r\n    }\r\n    setValue(rows, cols, value) {\r\n        if (rows < 0 || cols < 0 || rows > this.rows || cols > this.cols) {\r\n            return;\r\n        }\r\n        this.myArray[rows][cols] = value;\r\n    }\r\n    getArray() {\r\n        return this.myArray;\r\n    }\r\n    initRows(rows) {\r\n        if (rows < 1) {\r\n            return;\r\n        }\r\n        for (let i = 0; i < rows; i++) {\r\n            this.myArray.push(new Array());\r\n        }\r\n    }\r\n    initCols(cols, value) {\r\n        if (cols < 1) {\r\n            return;\r\n        }\r\n        for (let i = 0; i < this.myArray.length; i++) {\r\n            for (let j = 0; j < cols; j++) {\r\n                this.myArray[i].push(value);\r\n            }\r\n        }\r\n    }\r\n}\r\n",
+  "references": [
+    "E:/laya/Astar/src/Node.ts"
+  ]
+}
