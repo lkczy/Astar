@@ -36,6 +36,23 @@ class Main {
 		Laya.stage.addChild(printTxt);
 		printTxt.pos(50,10);
 		printTxt.fontSize=25;
+		printTxt.color="#0fffff";
+
+		let count:number = 0;
+		for(let element of arr3)
+		{
+			if(count<12)
+			{
+				printTxt.text += element.toString()+" ";
+				count++;
+			}
+			else
+			{
+				count=0;
+				printTxt.text += element.toString()+"\n";
+
+			}			
+		}
 
 
 
