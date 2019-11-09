@@ -70,7 +70,6 @@ class Main {
 			numArr[i] = numArr[j];
 			numArr[j] = temp;
 		}
-
 		let returnArrLength = 1000;
 		let randomArr = new Array<number>();
 		for (let i = 0; i < returnArrLength; i++) {
