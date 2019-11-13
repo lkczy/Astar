@@ -62,7 +62,7 @@ function main() {
     //开始绘制三角形
     var tick = function () {
         currentAngle = animate(currentAngle);//更新旋转角
-        draw(gl, n, currentAngle, modelMatrix, u_ModelMatrix);
+        draw(gl, n, currentAngle, modelMatrix, u_ModelMatrix);//清除上一个三角形，画出下一个三角形
         requestAnimationFrame(tick);//请求浏览器调用tick
     };
     tick();
@@ -84,11 +84,12 @@ function initVertexBuffers(gl) {
     //将缓冲区对象绑定到目标
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexColorBuffer);
+
     //向缓冲区对象中写入数据
     gl.bufferData(gl.ARRAY_BUFFER, verticesColors, gl.STATIC_DRAW);
 
     var FSIZE = verticesColors.BYTES_PER_ELEMENT;
-
+                   
     //获取attribute变量的储存位置
     var a_Position = gl.getAttribLocation(gl.program, 'a_Position');
     if (a_Position < 0) {

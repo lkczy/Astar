@@ -73,7 +73,8 @@ function initVertexBuffers(gl) {
         //顶点坐标和点的颜色
           0.0,   Math.sqrt(3)/3, 1.0, 0.0, 0.0,
          -0.5,  -Math.sqrt(3)/6, 0.0, 1.0, 0.0, 
-          0.5,  -Math.sqrt(3)/6, 0.0, 0.0, 1.0,
+        0.5, -Math.sqrt(3) / 6, 0.0, 0.0, 1.0,
+
           0.0,  Math.sqrt(3)/ 3, 1.0, 0.0, 0.0,
         -Math.sqrt(3)/6,(2*Math.sqrt(3)+3)/6, 0.0, 1.0, 0.0,
          Math.sqrt(3)/6,(2*Math.sqrt(3)+3)/6, 0.0, 0.0, 1.0  
@@ -117,7 +118,6 @@ function initVertexBuffers(gl) {
 function draw(gl, n, currentAngle, modelMatrix, u_ModelMatrix) {
     //设置旋转矩阵
     modelMatrix.setRotate(-currentAngle, 0, 0, 1);
-    modelMatrix.translate(0, -Math.sqrt(3) / 3, 0);
     //将旋转矩阵传输给顶点着色器
     gl.uniformMatrix4fv(u_ModelMatrix, false, modelMatrix.elements);
 
