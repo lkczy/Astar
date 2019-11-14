@@ -1,9 +1,9 @@
 // MultiAttributeColorTriangle.js
-//¶¥µã×ÅÉ«Æ÷³ÌÐò
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 var VSHADER_SOURCE =
     'attribute vec4 a_Position;\n' +  
     'attribute vec4 a_Color;\n' +
-    'varying vec4 v_Color;\n' +//varying±äÁ¿
+    'varying vec4 v_Color;\n' +//varyingï¿½ï¿½ï¿½ï¿½
     'uniform float u_CosB,u_SinB;\n'+
     'void main(){\n' +
     'gl_Position.x=a_Position.x*u_CosB-a_Position.y*u_SinB;\n' +
@@ -13,7 +13,7 @@ var VSHADER_SOURCE =
     'v_Color=a_Color;\n'+
     '}\n';
 
-//Æ¬Ôª×ÅÉ«Æ÷³ÌÐò
+//Æ¬Ôªï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 var FSHADER_SOURCE =
     'precision mediump float;\n' +
     'varying vec4 v_Color;\n'+
@@ -21,35 +21,35 @@ var FSHADER_SOURCE =
     'gl_FragColor = v_Color;\n' +
     '}\n';
 
-//Ðý×ª½Ç¶È
+//ï¿½ï¿½×ªï¿½Ç¶ï¿½
 var ANGLE = 90.0;
 
 function main() {
-    // »ñÈ¡<canvas>ÔªËØ
+    // ï¿½ï¿½È¡<canvas>Ôªï¿½ï¿½
     var canvas = document.getElementById('webgl');
 
-    // »ñÈ¡WebGLÉÏÏÂÎÄ
+    // ï¿½ï¿½È¡WebGLï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     var gl = getWebGLContext(canvas);
     if (!gl) {
         console.log('Failed to get the rendering context for WebGL');
         return;
     }
 
-    //³õÊ¼»¯×ÅÉ«Æ÷
+    //ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½
     if (!initShaders(gl, VSHADER_SOURCE, FSHADER_SOURCE)) {
         console.log('Failed to initialize shaders.');
         return;
     }
 
-    //ÉèÖÃ¶¥µãÎ»ÖÃ
+    //ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½Î»ï¿½ï¿½
     var n = initVertexBuffers(gl);
     if (n < 0) {
         console.log('Failed to set the position of the vertices');
         return;
     }
 
-    //½«Ðý×ªÍ¼ÐÎËùÐèµÄÊý¾Ý´«Êä¸ø¶¥µã×ÅÉ«Æ÷
-    var radin = Math.PI * ANGLE / 180.0;//×ªÎª»¡¶ÈÖÆ
+    //ï¿½ï¿½ï¿½ï¿½×ªÍ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½
+    var radin = Math.PI * ANGLE / 180.0;//×ªÎªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     var cosB = Math.cos(radin);
     var sinB = Math.sin(radin);
 
@@ -62,42 +62,42 @@ function main() {
     // Set clear color
     gl.clearColor(0.5, 0.5, 0.5, 1.0);
 
-    // Çå³ý <canvas>
+    // ï¿½ï¿½ï¿½ <canvas>
     gl.clear(gl.COLOR_BUFFER_BIT);
 
-    //»æÖÆÈý¸öµã
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     gl.drawArrays(gl.TRIANGLES, 0, n);//n is 3
 }
 
 function initVertexBuffers(gl) {
     var verticesColors = new Float32Array([
-        //¶¥µã×ø±êºÍµãµÄÑÕÉ«
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½É«
         0.0, 0.5, 1.0, 0.0, 0.0,
         -0.5, -0.5, 0.0, 1.0, 0.0, 
         0.5, -0.5, 0.0, 0.0, 1.0
     ]);
-    var n = 3;//µãµÄ¸öÊý
+    var n = 3;//ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½
 
-    //´´½¨»º³åÇø¶ÔÏó
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     var vertexBuffer = gl.createBuffer();
     var vertexColorBuffer = gl.createBuffer();
 
-    //½«»º³åÇø¶ÔÏó°ó¶¨µ½Ä¿±ê
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó¶¨µï¿½Ä¿ï¿½ï¿½
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexColorBuffer);
-    //Ïò»º³åÇø¶ÔÏóÖÐÐ´ÈëÊý¾Ý
+    //ï¿½ò»º³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     gl.bufferData(gl.ARRAY_BUFFER, verticesColors, gl.STATIC_DRAW);
 
     var FSIZE = verticesColors.BYTES_PER_ELEMENT;
-    //»ñÈ¡attribute±äÁ¿µÄ´¢´æÎ»ÖÃ
+    //ï¿½ï¿½È¡attributeï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½Î»ï¿½ï¿½
     var a_Position = gl.getAttribLocation(gl.program, 'a_Position');
     if (a_Position < 0) {
         console.log('Failed to get the storage location of a_Position');
         return;
     }
-    //½«»º³åÇø¶ÔÏó·ÖÅä¸øa_Position±äÁ¿
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a_Positionï¿½ï¿½ï¿½ï¿½
     gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, FSIZE*5, 0);
-    //Á¬½Óa_Position±äÁ¿Óë·ÖÅä¸øËüµÄ»º³åÇø¶ÔÏó
+    //ï¿½ï¿½ï¿½ï¿½a_Positionï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     gl.enableVertexAttribArray(a_Position);
 
     var a_Color = gl.getAttribLocation(gl.program, "a_Color");

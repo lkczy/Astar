@@ -71,7 +71,6 @@ function initVertexBuffers(gl) {
     }
     //将缓冲区对象分配给a_Position变量
     gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, 0, 0);
-
     //连接a_Position变量与分配给它的缓冲区对象
     gl.enableVertexAttribArray(a_Position);
 

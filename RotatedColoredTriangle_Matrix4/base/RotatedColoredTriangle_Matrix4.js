@@ -85,7 +85,7 @@ function initVertexBuffers(gl) {
     //将缓冲区对象绑定到目标
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexColorBuffer);
-    //向缓冲区对象中写入数据
+    //将数据写入缓冲区对象
     gl.bufferData(gl.ARRAY_BUFFER, verticesColors, gl.STATIC_DRAW);
 
     var FSIZE = verticesColors.BYTES_PER_ELEMENT;
