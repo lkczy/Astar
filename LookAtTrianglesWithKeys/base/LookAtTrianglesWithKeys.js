@@ -4,10 +4,9 @@ var VSHADER_SOURCE =
     'attribute vec4 a_Position;\n' +  
     'attribute vec4 a_Color;\n' +
     'uniform mat4 u_ViewMatrix;\n'+
-    'uniform mat4 u_ModelMatrix;\n'+
     'varying vec4 v_Color;\n' +//varying变量
     'void main(){\n' +
-    'gl_Position = a_Position * u_ViewMatrix * u_ModelMatrix;\n' +
+    'gl_Position = a_Position * u_ViewMatrix;\n' +
     'v_Color=a_Color;\n'+
     '}\n';
 
@@ -48,31 +47,24 @@ function main() {
     // 清除 <canvas>
     gl.clear(gl.COLOR_BUFFER_BIT);
 
-    //获取u_ViewMatrix和u_ModelMatrix的存储地址
+    //获取u_ViewMatrix变量的存储地址
     var u_ViewMatrix=gl.getUniformLocation(gl.program,'u_ViewMatrix');
-    var u_ModelMatrix=gl.getUniformLocation(gl.program,'u_ModelMatrix');
     if(u_ViewMatrix<0){
         console.log('Failed to get the storage location of u_ViewMatrix');
         return;
     }
-    if(u_ModelMatrix<0){
-        console.log('Failed to get the storage location of u_ModelMatrix');
-        return;
-    }
     //设置视点、视线和上方向
     var viewMatrix=new Matrix4();
-    viewMatrix.setLookAt(0.25, 0.25, 0.25,  0,0,0, 0,1,0);
+    viewMatrix.setLookAt(0.20, 0.25, 0.25,  0,0,0, 0,1,0);
 
-    //计算旋转矩阵
-    var modelMatrix=new Matrix4();
-    modelMatrix.setRotate(-45,0,0,1);//围绕z轴旋转
+    //注册键盘事件响应函数
+    document.onkeydown=function(ev){keydown(ev,gl,n,u_ViewMatrix,viewMatrix);};
 
-    //将矩阵传给对应的uniform变量
+    //将视图矩阵传给u_ViewMatrix变量
     gl.uniformMatrix4fv(u_ViewMatrix,false,viewMatrix.elements);
-    gl.uniformMatrix4fv(u_ModelMatrix,false,modelMatrix.elements);
 
     //绘制三个点
-    gl.drawArrays(gl.TRIANGLES, 0, n);//n is 3
+    draw(gl,n,u_ViewMatrix,viewMatrix);
 }
 
 function initVertexBuffers(gl) {
@@ -123,6 +115,26 @@ function initVertexBuffers(gl) {
     gl.enableVertexAttribArray(a_Color);
 
     return n;
+}
+
+var g_eyeX=0.20,g_eyeY=0.25,g_eyeZ=0.25;//视点
+function keydown(ev,gl,n,u_ViewMatrix,viewMatrix){
+    if(ev.keyCode==39){//按下右键
+        g_eyeX+=0.01;
+    }else if(ev.keyCode==37){//按下左键
+        g_eyeX-=0.01;
+    }else{return;}//按下的是其他键
+    draw(gl,n,u,u_ViewMatrix,viewMatrix);
+}
+
+function draw(gl,n,u_ViewMatrix,viewMatrix){
+    viewMatrix.setLookAt(g_eyeX,g_eyeY,g_eyeZ,0,0,0,0,1,0);
+    
+    gl.uniformMatrix4fv(u_ViewMatrix,false,viewMatrix.elements);
+
+    gl.clear(gl.COLOR_BUFFER_BIT);
+
+    gl.drawArrays(gl.TRIANGLES,0,n);
 }
 
 
