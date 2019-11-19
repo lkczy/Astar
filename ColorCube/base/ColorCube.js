@@ -2,12 +2,9 @@
 //顶点着色器程序
 var VSHADER_SOURCE =
   'attribute vec4 a_Position;\n' +
-  'attribute vec4 a_Color;\n' +
   'uniform mat4 u_MvpMatrix;\n' +//=投影矩阵*视图矩阵*模型矩阵
-  'varying vec4 v_Color;\n' +
   'void main() {\n' +
   '  gl_Position = u_MvpMatrix * a_Position;\n' +
-  '  v_Color = a_Color;\n' +
   '}\n';
 
 //片元着色器程序
@@ -15,9 +12,8 @@ var FSHADER_SOURCE =
   '#ifdef GL_ES\n' +
   'precision mediump float;\n' +
   '#endif\n' +
-  'varying vec4 v_Color;\n' +
   'void main() {\n' +
-  '  gl_FragColor = v_Color;\n' +
+  '  gl_FragColor = vec4(0.0,0.0,0.5,1.0);\n' +
   '}\n';
 
 var rotateSpeed = 90.0;
@@ -76,56 +72,46 @@ function main() {
 }
 
 function initVertexBuffers(gl) {
-  var verticesColors = new Float32Array([
+  var vertex = new Float32Array([
     // 顶点坐标和颜色
-    1, 1, 1, 1.0, 0.0, 0.0,// v0 索引值0
-    -1, 1, 1, 0.1, 0.2, 0.3,// v1 索引值1
-    -1, -1, 1, 1.0, 0.0, 1.0,// v2 索引值3
-    1, -1, 1, 1.0, 1.0, 0.0,// v3 索引值3
-    1, -1, -1, 0.0, 1.0, 0.0,// v4 索引值4
-    1, 1, -1, 0.0, 1.0, 1.0,// v5 索引值5
-    -1, 1, -1, 0.0, 0.0, 1.0,// v6 索引值6
-    -1, -1, -1, 1.0, 1.0, 1.0 // v7 索引值7
+    1.0,1.0,1.0,   -1.0,1.0,1.0,   -1.0,-1.0,1.0,   1.0,-1.0,1.0,//F
+    1.0,1.0,1.0,   1.0,-1.0,1.0,   1.0,-1.0,-1.0,   1.0,1.0,-1.0,//R
+    1.0,1.0,1.0,   1.0,1.0,-1.0,   -1.0,1.0,-1.0,   -1.0,1.0,1.0,//U
+    -1.0,1.0,1.0,  -1.0,1.0,-1.0,  -1.0,-1.0,-1.0,  -1.0,-1.0,1.0,//L
+    -1.0,-1.0,-1.0, 1.0,-1.0,-1.0, 1.0,-1.0,1.0,    -1.0,-1.0,1.0,//D
+    1.0,-1.0,-1.0, -1.0,-1.0,-1.0, -1.0,1.0,-1.0,   1.0,1.0,-1.0//B
   ]);//6个数值一组，一共8组
 
   // 顶点的索引(绘制时立方体使用各个点的顺序)
   var indices = new Uint8Array([
-    0, 1, 2, 0, 2, 3,// F
-    0, 3, 4, 0, 4, 5,// R
-    0, 5, 6, 0, 6, 1,// U
-    1, 6, 7, 1, 7, 2,// L
-    7, 4, 3, 7, 3, 2,// D
-    4, 7, 6, 4, 6, 5 // B
+    0,1,2,    0,2,3,// F
+    4,5,6,    4,6,7,// R
+    8,9,10,   8,10,11,// U
+    12,13,14, 12,14,15,// L
+    16,17,18, 16,18,19,// D
+    20,21,22, 20,22,23// B
   ]);
 
   // 创建缓冲区对象
-  var vertexColorBuffer = gl.createBuffer();
+  var vertexBuffer = gl.createBuffer();
   var indexBuffer = gl.createBuffer();
-  if (!vertexColorBuffer || !indexBuffer) {
+  if (!vertexBuffer || !indexBuffer) {
     return -1;
   }
 
   // 将顶点坐标和颜色写入缓冲区对象
-  gl.bindBuffer(gl.ARRAY_BUFFER, vertexColorBuffer);
-  gl.bufferData(gl.ARRAY_BUFFER, verticesColors, gl.STATIC_DRAW);
+  gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+  gl.bufferData(gl.ARRAY_BUFFER, vertex, gl.STATIC_DRAW);
 
-  var FSIZE = verticesColors.BYTES_PER_ELEMENT;
+  var FSIZE = vertex.BYTES_PER_ELEMENT;
   // 将缓冲区内顶点坐标数据分配给a_Position并开启之
   var a_Position = gl.getAttribLocation(gl.program, 'a_Position');
   if (a_Position < 0) {
     console.log('Failed to get the storage location of a_Position');
     return -1;
   }
-  gl.vertexAttribPointer(a_Position, 3, gl.FLOAT, false, FSIZE * 6, 0);
+  gl.vertexAttribPointer(a_Position, 3, gl.FLOAT, false, FSIZE * 3, 0);
   gl.enableVertexAttribArray(a_Position);
-  // 将缓冲区内顶点颜色数据分配给a_Color并开启之
-  var a_Color = gl.getAttribLocation(gl.program, 'a_Color');
-  if (a_Color < 0) {
-    console.log('Failed to get the storage location of a_Color');
-    return -1;
-  }
-  gl.vertexAttribPointer(a_Color, 3, gl.FLOAT, false, FSIZE * 6, FSIZE * 3);
-  gl.enableVertexAttribArray(a_Color);
 
   // 将顶点索引数据写入缓冲区对象
   gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
