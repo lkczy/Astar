@@ -28,7 +28,11 @@ var n;
 var mvpMatrix = new Matrix4();
 var viewMatrix = new Matrix4();
 var projMatrix = new Matrix4();
-var modelMatrix = new Matrix4();
+var sunModelMatrix = new Matrix4();
+var earthModelMatrix = new Matrix4();
+var earthWorldMatrix = new Matrix4();
+var moonModelMatrix = new Matrix4();
+var moonWorldMatrix = new Matrix4();
 
 function main() {
   //获取<canvas>元素
@@ -71,6 +75,8 @@ function main() {
     var deltaTime = lastTimeFrame();
     currentAngle = updateRotateAngle(rotateSpeed, currentAngle, deltaTime);
     draw1(gl);
+    draw2(gl);
+    draw3(gl);
     requestAnimationFrame(tick);
   };
   tick();
@@ -85,11 +91,39 @@ function initVertexBuffers(gl) {
     1.0,1.0,1.0,   1.0,1.0,-1.0,   -1.0,1.0,-1.0,   -1.0,1.0,1.0,//U
     -1.0,1.0,1.0,  -1.0,1.0,-1.0,  -1.0,-1.0,-1.0,  -1.0,-1.0,1.0,//L
     -1.0,-1.0,-1.0, 1.0,-1.0,-1.0, 1.0,-1.0,1.0,    -1.0,-1.0,1.0,//D
-    1.0,-1.0,-1.0, -1.0,-1.0,-1.0, -1.0,1.0,-1.0,   1.0,1.0,-1.0//B
+    1.0,-1.0,-1.0, -1.0,-1.0,-1.0, -1.0,1.0,-1.0,   1.0,1.0,-1.0,//B
+
+    0.5,0.5,0.5,   -0.5,0.5,0.5,   -0.5,-0.5,0.5,   0.5,-0.5,0.5,//F2
+    0.5,0.5,0.5,   0.5,-0.5,0.5,   0.5,-0.5,-0.5,   0.5,0.5,-0.5,//R2
+    0.5,0.5,0.5,   0.5,0.5,-0.5,   -0.5,0.5,-0.5,   -0.5,0.5,0.5,//U2
+    -0.5,0.5,0.5,  -0.5,0.5,-0.5,  -0.5,-0.5,-0.5,  -0.5,-0.5,0.5,//L2
+    -0.5,-0.5,-0.5, 0.5,-0.5,-0.5, 0.5,-0.5,0.5,    -0.5,-0.5,0.5,//D2
+    0.5,-0.5,-0.5, -0.5,-0.5,-0.5, -0.5,0.5,-0.5,   0.5,0.5,-0.5,//B2
+
+    0.3,0.3,0.3,   -0.3,0.3,0.3,   -0.3,-0.3,0.3,   0.3,-0.3,0.3,//F3
+    0.3,0.3,0.3,   0.3,-0.3,0.3,   0.3,-0.3,-0.3,   0.3,0.3,-0.3,//R3
+    0.3,0.3,0.3,   0.3,0.3,-0.3,   -0.3,0.3,-0.3,   -0.3,0.3,0.3,//U3
+    -0.3,0.3,0.3,  -0.3,0.3,-0.3,  -0.3,-0.3,-0.3,  -0.3,-0.3,0.3,//L3
+    -0.3,-0.3,-0.3, 0.3,-0.3,-0.3, 0.3,-0.3,0.3,    -0.3,-0.3,0.3,//D3
+    0.3,-0.3,-0.3, -0.3,-0.3,-0.3, -0.3,0.3,-0.3,   0.3,0.3,-0.3//B3
   ]);
 
   //颜色
   var color = new Float32Array([
+    0.0,0.0,1.0,  0.0,0.0,1.0,  0.0,0.0,1.0,  0.0,0.0,1.0,
+    1.0,0.0,0.0,  1.0,0.0,0.0,  1.0,0.0,0.0,  1.0,0.0,0.0,
+    1.0,1.0,0.0,  1.0,1.0,0.0,  1.0,1.0,0.0,  1.0,1.0,0.0,
+    1.0,0.5,0.0,  1.0,0.5,0.0,  1.0,0.5,0.0,  1.0,0.5,0.0,
+    1.0,1.0,1.0,  1.0,1.0,1.0,  1.0,1.0,1.0,  1.0,1.0,1.0,
+    0.0,1.0,0.0,  0.0,1.0,0.0,  0.0,1.0,0.0,  0.0,1.0,0.0,
+
+    0.0,0.0,1.0,  0.0,0.0,1.0,  0.0,0.0,1.0,  0.0,0.0,1.0,
+    1.0,0.0,0.0,  1.0,0.0,0.0,  1.0,0.0,0.0,  1.0,0.0,0.0,
+    1.0,1.0,0.0,  1.0,1.0,0.0,  1.0,1.0,0.0,  1.0,1.0,0.0,
+    1.0,0.5,0.0,  1.0,0.5,0.0,  1.0,0.5,0.0,  1.0,0.5,0.0,
+    1.0,1.0,1.0,  1.0,1.0,1.0,  1.0,1.0,1.0,  1.0,1.0,1.0,
+    0.0,1.0,0.0,  0.0,1.0,0.0,  0.0,1.0,0.0,  0.0,1.0,0.0,
+
     0.0,0.0,1.0,  0.0,0.0,1.0,  0.0,0.0,1.0,  0.0,0.0,1.0,
     1.0,0.0,0.0,  1.0,0.0,0.0,  1.0,0.0,0.0,  1.0,0.0,0.0,
     1.0,1.0,0.0,  1.0,1.0,0.0,  1.0,1.0,0.0,  1.0,1.0,0.0,
@@ -106,7 +140,21 @@ function initVertexBuffers(gl) {
     8,9,10,   8,10,11,// U
     12,13,14, 12,14,15,// L
     16,17,18, 16,18,19,// D
-    20,21,22, 20,22,23// B
+    20,21,22, 20,22,23,// B
+
+    24,25,26, 24,26,27,//F2
+    28,29,30, 28,30,31,//R2
+    32,33,34, 32,34,35,//U2
+    36,37,38, 36,38,39,//L2
+    40,41,42, 40,42,43,//D2
+    44,45,46, 44,46,47,//B2
+
+    48,49,50, 48,50,51,//F3
+    52,53,54, 52,54,55,//R2
+    56,57,58, 56,58,59,//U2
+    60,61,62, 60,62,63,//L2
+    64,65,66, 64,66,67,//D2
+    68,69,70, 68,70,71 //B2
   ]);
 
   // 创建缓冲区对象
@@ -159,8 +207,8 @@ function updateRotateAngle(rotatingSpeed, angle, time) {
 }
 
 function draw1(gl) {
-  modelMatrix.setRotate(currentAngle, 0, 1, 0);
-  mvpMatrix.set(projMatrix).multiply(viewMatrix).multiply(modelMatrix);
+  sunModelMatrix.setRotate(currentAngle , 0, 1, 0);
+  mvpMatrix.set(projMatrix).multiply(viewMatrix).multiply(sunModelMatrix);
   //获取u_MvpMatrix地址
   var u_MvpMatrix = gl.getUniformLocation(gl.program, 'u_MvpMatrix');
   if (!u_MvpMatrix) {
@@ -172,5 +220,61 @@ function draw1(gl) {
   // 清空颜色和深度缓冲区
   gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
   // 画出立方体
-  gl.drawElements(gl.TRIANGLES, n, gl.UNSIGNED_BYTE, 0);
+  gl.drawElements(gl.TRIANGLES, 36, gl.UNSIGNED_BYTE, 0);
+}
+
+function draw2(gl) {
+  /*
+  earthModelMatrix.setRotate(currentAngle, 0, 1, 0);//公转
+  earthModelMatrix.translate(8, 0, 0);
+  earthModelMatrix.rotate(currentAngle, 0, 1, 0);//自转
+  mvpMatrix.set(projMatrix).multiply(viewMatrix).multiply(earthModelMatrix);
+  */
+  earthModelMatrix.setRotate(currentAngle,0,1,0);
+  earthModelMatrix.translate(8, 0, 0);
+  earthModelMatrix.rotate(currentAngle, 0, 1, 0);//earthModelMatrix相对位置关系变换矩阵
+
+  earthWorldMatrix.set(sunModelMatrix);
+
+  earthWorldMatrix.multiply(earthModelMatrix);
+  mvpMatrix.set(projMatrix).multiply(viewMatrix).multiply(earthWorldMatrix);
+
+  //获取u_MvpMatrix地址
+  var u_MvpMatrix = gl.getUniformLocation(gl.program, 'u_MvpMatrix');
+  if (!u_MvpMatrix) {
+    console.log('Failed to get the storage location of u_MvpMatrix');
+    return;
+  }
+  //传递模型、视图、投影矩阵到u_MvpMatrix
+  gl.uniformMatrix4fv(u_MvpMatrix, false, mvpMatrix.elements);
+  gl.clear(gl.DEPTH_BUFFER_BIT);
+  gl.drawElements(gl.TRIANGLES, 36, gl.UNSIGNED_BYTE, 36);
+}
+
+function draw3(gl) {
+  /*moonModelMatrix.setRotate(currentAngle,0,1,0);
+  moonModelMatrix.translate(8,0,0);
+  moonModelMatrix.rotate(currentAngle * 3,0,1,0);
+  moonModelMatrix.translate(1,0,0);
+  mvpMatrix.set(projMatrix).multiply(viewMatrix).multiply(moonModelMatrix);
+  */
+  moonModelMatrix.setRotate(currentAngle * 5,0,1,0);
+  moonModelMatrix.translate(2,0,0);
+  moonModelMatrix.rotate(currentAngle * 10,0,1,0);
+
+  moonWorldMatrix.set(earthWorldMatrix);
+
+  moonWorldMatrix.multiply(moonModelMatrix);
+  mvpMatrix.set(projMatrix).multiply(viewMatrix).multiply(moonWorldMatrix);
+
+  //获取u_MvpMatrix地址
+  var u_MvpMatrix = gl.getUniformLocation(gl.program, 'u_MvpMatrix');
+  if (!u_MvpMatrix) {
+    console.log('Failed to get the storage location of u_MvpMatrix');
+    return;
+  }
+  //传递模型、视图、投影矩阵到u_MvpMatrix
+  gl.uniformMatrix4fv(u_MvpMatrix, false, mvpMatrix.elements);
+  gl.clear(gl.DEPTH_BUFFER_BIT);
+  gl.drawElements(gl.TRIANGLES, 36, gl.UNSIGNED_BYTE, 72);
 }
