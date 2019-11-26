@@ -1,5 +1,0 @@
-<!--component/hwBannerAd/hwBannerAd.wxml-->
-<view class='ad-bottom'>
-  <image src='https://cdn-xyx.raink.com.cn/elsfkxxk/2222.jpg' class='banner' bindtap='goShop' wx:if='{{!isShowWx && (status != 0)}}'/>
-  <ad unit-id='{{adId}}' wx:else></ad>
-</view>

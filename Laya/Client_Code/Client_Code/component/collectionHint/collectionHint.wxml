@@ -1,7 +1,0 @@
-<image class='collection_icon animation-waggle' src='/imgs/comm/saveme.png' catchtap='collectionTap' hidden='{{show}}'></image>
-<view class='main' hidden='{{!show}}' catchtap='cancelTap'>
-  <image class='icon_saveme2' src='/imgs/comm/saveme2.png' catchtap='collectionTap'></image>
-  <view class='colse_icon'>
-    <icon class='cancel_icon' type='cancel' color='#fff' size='40' catchtap='cancelTap'></icon>
-  </view>
-</view>

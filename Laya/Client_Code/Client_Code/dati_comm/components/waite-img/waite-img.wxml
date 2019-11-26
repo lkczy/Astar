@@ -1,3 +1,0 @@
-<!--pages/comm/waite-img/waite-img.wxml-->
-
-<image src="{{src}}" wx:if="{{show}}" style="width:{{width}}rpx;height:{{height}}rpx"></image>
