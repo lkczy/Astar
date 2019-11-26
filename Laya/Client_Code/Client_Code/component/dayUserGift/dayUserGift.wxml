@@ -1,0 +1,20 @@
+<view class='gift'>
+  <view class="coin" >
+    <image src='rcdlb.png' class='gift-img'></image>
+    <view class='gift-coin-num-wrap' >
+      <view style='font-size: 60rpx'>{{coin}}</view>
+      <view>金 币</view>
+    </view>
+    <view wx:if='{{openLevel=="2"}}' class='gift-tips-wrap'>
+    <!-- 分享到微信群可领取 -->
+      <view>分享到微信群可领取</view>
+      <image src='5B.png' class='gift-double-img'></image>
+      <view>金币( {{coin * 5}}金币)</view>
+    </view>
+
+    <button open-type="share" wx:if='{{ShareOrVideo==2}}' class='gift-share' id='dayUserGift'>领取金币</button>
+    <button class='gift-share' bind:tap="playvideo" wx:if='{{ShareOrVideo==1||ShareOrVideo==3}}' id='newUserGift'>领取金币</button>
+
+    <view class='gift-get' bindtap='dayUserGift'>领取</view>
+  </view>
+</view>

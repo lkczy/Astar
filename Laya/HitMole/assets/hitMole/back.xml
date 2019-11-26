@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="800,600">
+  <displayList>
+    <image id="n0_ovas" name="background" src="ovas0" fileName="UI/back.png" xy="28,28"/>
+    <component id="n22_jtpg" name="Mole0" src="jtpgf" fileName="Mole.xml" xy="166,199"/>
+    <component id="n42_jtpg" name="Mole1" src="jtpgf" fileName="Mole.xml" xy="354,197"/>
+    <component id="n43_jtpg" name="Mole2" src="jtpgf" fileName="Mole.xml" xy="550,203"/>
+    <image id="n33_jtpg" name="n33" src="ovas1" fileName="mask/mask-01.png" xy="160,282"/>
+    <image id="n34_jtpg" name="n34" src="xnw45" fileName="mask/mask-02.png" xy="347,280"/>
+    <image id="n35_jtpg" name="n35" src="xnw46" fileName="mask/mask-03.png" xy="546,286"/>
+    <component id="n44_jtpg" name="Mole5" src="jtpgf" fileName="Mole.xml" xy="555,288"/>
+    <component id="n45_jtpg" name="Mole4" src="jtpgf" fileName="Mole.xml" xy="357,290"/>
+    <component id="n46_jtpg" name="Mole3" src="jtpgf" fileName="Mole.xml" xy="138,290"/>
+    <image id="n36_jtpg" name="n36" src="xnw47" fileName="mask/mask-04.png" xy="133,373"/>
+    <image id="n37_jtpg" name="n37" src="xnw48" fileName="mask/mask-05.png" xy="347,373"/>
+    <image id="n38_jtpg" name="n38" src="xnw49" fileName="mask/mask-06.png" xy="549,373"/>
+    <component id="n47_jtpg" name="Mole6" src="jtpgf" fileName="Mole.xml" xy="132,386"/>
+    <component id="n48_jtpg" name="Mole7" src="jtpgf" fileName="Mole.xml" xy="355,391"/>
+    <component id="n49_jtpg" name="Mole8" src="jtpgf" fileName="Mole.xml" xy="576,393"/>
+    <image id="n39_jtpg" name="n39" src="xnw4a" fileName="mask/mask-07.png" xy="125,470"/>
+    <image id="n40_jtpg" name="n40" src="xnw4b" fileName="mask/mask-08.png" xy="348,474"/>
+    <image id="n41_jtpg" name="n41" src="xnw4c" fileName="mask/mask-09.png" xy="570,476"/>
+    <component id="n51_jtpg" name="progressBar" src="jtpgn" fileName="ProgressBar.xml" xy="12,10">
+      <ProgressBar value="100" max="100"/>
+    </component>
+    <text id="n59_f5j3" name="score" xy="30,40" size="146,34" font="ui://7pbwzfamf5j3p" fontSize="28" align="right" letterSpacing="3" autoSize="none" text="0"/>
+  </displayList>
+</component>

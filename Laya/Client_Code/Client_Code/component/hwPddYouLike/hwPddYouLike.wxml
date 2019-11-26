@@ -1,0 +1,26 @@
+<!--component/hwPddYouLike/hwPddYouLike.wxml-->
+
+<view class='wrap' wx:if='{{!isShowWx && (status != 0) && goodsList}}'>
+  <!-- <view class='wrap' wx:if='true' > -->
+  <image src='d.jpg' class='bg' bindtap='toShop'></image>
+  <swiper autoplay='true' circular='true' class='goods-swiper'>
+
+    <swiper-item class='row' wx:for='{{goodsAd}}' wx:for-item='goods' wx:for-index='index'>
+      <navigator wx:for='{{goods.imgsUrl}}' wx:for-item='item' url='/pages/sub_pages/hwShopDetail/hwShopDetail?id={{item.goods_id}}&position={{position}}' bindtap='log' class='goods-item' data-goods='{{item}}'>
+        <image src='{{item.goods_thumbnail_url}}' bindtap='toDetail'></image>
+        <image src='an.png' class='price-bg'></image>
+        <view class='price'>
+          <text class='new'>¥{{(item.min_group_price - item.coupon_discount)/100}}</text>
+          <text class='old'>¥{{item.min_group_price/100}}</text>
+        </view>
+      </navigator>
+    </swiper-item>
+  </swiper>
+  <image src='p.jpg' class='pdd' bindtap='toShop'></image>
+  <image src='b.png' class='zhe' bindtap='toShop'></image>
+</view>
+
+<ad unit-id='{{adId}}' style='z-index:9999' bindload='bannerLoad' binderror='bannerErr' wx:else></ad>
+<view class='more_warp' wx:if='{{!wxBannerShow && cnxhstate}}' >
+    <image class='more_image' wx:if='{{index<4}}' src='{{item.image}}' wx:for='{{suggestList}}' wx:key='this' catchtap='adClick' data-item="{{item}}"></image>
+</view>

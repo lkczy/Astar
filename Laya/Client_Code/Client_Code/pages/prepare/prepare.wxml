@@ -1,0 +1,45 @@
+<!--pages/prepare/prepare.wxml-->
+<view class='page'>
+  <view class='prepare'>
+    <!--放弃  -->
+    <view class='pipei'>
+      <view class='fangqi' wx-if="{{!ppwc_b}}" bindtap='OnFangqiClick'>放弃</view>
+    </view>
+    <!--左方头像信息  -->
+    <view class='left_info'>
+    
+      <!--底板图  -->
+      <view class='left_diban'>
+        <image src="../../imgs/comm/diban.png" style='width:300rpx;height:300rpx;'></image>
+      </view>
+      <!--头像  -->
+      <image class="userinfo-avatar " src="{{data.leftPly[0].icon}}" background-size="cover"></image>
+      <!--名字  -->
+      <view class="userinfo-nickname ">
+        <view class='daply one_line'>{{data.leftPly[0].name}}</view>
+      </view>
+    </view>
+
+    <!--右方头像信息  -->
+    <view class='right_info'>
+      <!--底板图  -->
+      <view class='right_diban'>
+        <image src="../../imgs/comm/diban.png" style='width:300rpx;height:300rpx;'></image>
+      </view>
+      <!--头像  -->
+      <image wx-if="{{!data.rightPly[0].icon}}" class="userinfo-avatarc" background-size="cover"></image>
+      <image wx:else class="userinfo-avatarb" src="{{data.rightPly[0].icon}}" background-size="cover"></image>
+      <!--名字  -->
+
+      <view class="userinfo-nickname ">
+        <view class='daplyb one_line'>{{data.rightPly[0].name}}</view>
+      </view>
+    </view>
+    <view class='xunzhao' wx:if="{{zzpp_a}}">{{zzpp}}</view>
+    <view class='xunzhaoa' wx:if="{{ppwc_b}}">{{ppwc}}</view>
+    <!--对战  -->
+    <view class='duizhan'>
+      <image src='../../imgs/comm/duizhan.png' style='width:177rpx;height:90rpx;'></image>
+    </view>
+  </view>
+</view>

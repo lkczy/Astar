@@ -1,0 +1,96 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.5.2",
+	"appid": "wx0a2d7995b5325021",
+	"projectname": "CCY1-0-0",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 7,
+			"list": [
+				{
+					"id": 0,
+					"name": "测试1v1好友邀请",
+					"pathName": "pages/index/index",
+					"query": "m8=NTY2MDA3MTM3MDIwOTA3NTg3NyAxNzIuMTcuMTIxLjIzMSA1OTIgMQ%3d%3d",
+					"scene": "1007"
+				},
+				{
+					"id": 1,
+					"name": "测试3v3好友邀请",
+					"pathName": "pages/index/index",
+					"query": "m9=NTY2MDA3MTM3MDIwOTA3NTg3NyAxNzIuMTcuMTIxLjIzMSA1OTIgMQ%3d%3d",
+					"scene": "1007"
+				},
+				{
+					"id": -1,
+					"name": "number",
+					"pathName": "pages/number/number",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "签到",
+					"pathName": "pages/signin/signin",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "每日礼包",
+					"pathName": "pages/index/index",
+					"query": "gid=5216&wxsource=wx&wxposition=menu",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "支付",
+					"pathName": "pages/pay/pay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "测试公众号",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": 1089
+				},
+				{
+					"id": -1,
+					"name": "测试",
+					"pathName": "pages/index/index",
+					"scene": 1011
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="301,23" extention="ProgressBar">
+  <ProgressBar/>
+  <displayList>
+    <image id="n0_jtpg" src="jtpgi" name="n0" xy="0,0" size="301,23">
+      <relation target="" sidePair="width,height"/>
+    </image>
+    <image id="n1_jtpg" src="jtpgh" name="bar" xy="0,0" size="301,23"/>
+  </displayList>
+</component>

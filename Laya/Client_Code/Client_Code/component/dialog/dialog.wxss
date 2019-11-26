@@ -1,0 +1,52 @@
+.dialog{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  z-index:100;
+
+}
+.dialog_main{
+  width: 600rpx;
+  background: #fff;
+  border-radius: 6rpx;
+  padding-top: 20rpx;
+  margin-bottom:150rpx;
+  
+}
+.title{
+  font-size: 36rpx;
+  display: block;
+  text-align: center;
+  line-height: 80rpx;
+}
+.content{
+  color: #999;
+  font-size: 30rpx;
+  display: block;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+  text-align: center;
+  padding-bottom: 30rpx;
+}
+.handle{
+  height: 96rpx;
+  border-top: 3rpx solid #efefef;
+  display: flex;
+}
+.cancel,.confirm{
+  flex: 1;
+  text-align: center; 
+  line-height: 96rpx;
+  border-radius: 10rpx;
+}
+.confirm{
+  color: #60D048;
+  border-left: 3rpx solid #efefef;
+}
+/* 60D048 */

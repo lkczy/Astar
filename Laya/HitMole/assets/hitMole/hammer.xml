@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="110,104" opaque="false" designImageAlpha="52" designImageLayer="1">
+  <displayList>
+    <image id="n0_gyfc" name="n0" src="jtpgg" fileName="hammer.png" xy="41,6" rotation="19.4"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="Rotation" target="n0_gyfc" value="19.4"/>
+    <item time="0" type="XY" target="n0_gyfc" value="41,6"/>
+    <item time="2" type="Rotation" target="n0_gyfc" value="-3.4"/>
+    <item time="2" type="XY" target="n0_gyfc" value="11.05,34.05"/>
+    <item time="8" type="Rotation" target="n0_gyfc" value="19.4"/>
+    <item time="8" type="XY" target="n0_gyfc" value="41.95,6.05"/>
+  </transition>
+</component>

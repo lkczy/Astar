@@ -1,0 +1,11 @@
+<block wx:if='{{btnType=="image"}}'>
+  <navigator target="miniProgram" app-id="{{friend.appid}}" path="{{friend.page}}?type=link&adid=0" bindtap='tapApp'>
+    <image src='image.png' mode='widthFix' class='scale-animation'></image>
+  </navigator>
+</block>
+
+<block wx:elif='{{btnType=="normal"}}'>
+  <navigator target="miniProgram" app-id="{{friend.appid}}" path="{{friend.page}}?type=link&adid=0" bindtap='tapApp'>
+    <slot></slot>
+  </navigator>
+</block>

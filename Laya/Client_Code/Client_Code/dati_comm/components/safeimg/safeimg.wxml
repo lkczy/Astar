@@ -1,0 +1,4 @@
+<!--安全的图片，负责自动重试-->
+<image wx:if="{{!IsAspectFit&&src!=''}}"  src="{{src}}" style="width:{{width}};height:{{height}}"></image>
+<image wx:if="{{IsAspectFit&&src!=''}}"  mode='aspectFit' src="{{src}}" binderror="OnError" 
+bindload="OnLoad" style="{{width!=''?('width:'+width+';'):''}}{{height!=''?('height:'+height+';'):''}}" ></image>

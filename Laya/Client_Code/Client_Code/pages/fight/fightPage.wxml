@@ -1,0 +1,3 @@
+<!--pages/fight/fightPage.wxml-->
+<import src="./fight.wxml"/>
+<template is="fight" data="{{data:data}}"></template>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="7pbwzfam" jpegQuality="80" compressPNG="true">
+  <resources>
+    <image id="ovas0" name="back.png" path="/UI/"/>
+    <image id="ovas1" name="mask-01.png" path="/mask/"/>
+    <image id="ovas2" name="mouse_hit_1.png" path="/mouse/"/>
+    <image id="ovas3" name="mouse_normal_1.png" path="/mouse/"/>
+    <component id="ovas4" name="back.xml" path="/" exported="true"/>
+    <image id="xnw45" name="mask-02.png" path="/mask/"/>
+    <image id="xnw46" name="mask-03.png" path="/mask/"/>
+    <image id="xnw47" name="mask-04.png" path="/mask/"/>
+    <image id="xnw48" name="mask-05.png" path="/mask/"/>
+    <image id="xnw49" name="mask-06.png" path="/mask/"/>
+    <image id="xnw4a" name="mask-07.png" path="/mask/"/>
+    <image id="xnw4b" name="mask-08.png" path="/mask/"/>
+    <image id="xnw4c" name="mask-09.png" path="/mask/"/>
+    <image id="xnw4d" name="mouse_hit_2.png" path="/mouse/"/>
+    <image id="xnw4e" name="mouse_normal_2.png" path="/mouse/"/>
+    <component id="jtpgf" name="Mole.xml" path="/"/>
+    <image id="jtpgg" name="hammer.png" path="/UI/"/>
+    <image id="jtpgh" name="progress_time$bar.png" path="/score/"/>
+    <image id="jtpgi" name="progress_time.png" path="/score/"/>
+    <image id="jtpgj" name="score_1.png" path="/score/"/>
+    <image id="jtpgk" name="score_2.png" path="/score/"/>
+    <image id="jtpgl" name="clip_number.png" path="/score/"/>
+    <component id="jtpgn" name="ProgressBar.xml" path="/"/>
+    <font id="f5j3p" name="number1.fnt" path="/" exported="true"/>
+    <image id="f5j3q" name="0000_9_png.png" path="/images/"/>
+    <image id="f5j3r" name="0001_8_png.png" path="/images/"/>
+    <image id="f5j3s" name="0002_7_png.png" path="/images/"/>
+    <image id="f5j3t" name="0003_6_png.png" path="/images/"/>
+    <image id="f5j3u" name="0004_5_png.png" path="/images/"/>
+    <image id="f5j3v" name="0005_4_png.png" path="/images/"/>
+    <image id="f5j3w" name="0006_3_png.png" path="/images/"/>
+    <image id="f5j3x" name="0007_2_png.png" path="/images/"/>
+    <image id="f5j3y" name="0008_1_png.png" path="/images/"/>
+    <image id="f5j3z" name="0009_0-_png.png" path="/images/"/>
+    <component id="gyfc10" name="hammer.xml" path="/" exported="true"/>
+    <image id="rwam12" name="btn_start.png" path="/UI/"/>
+    <image id="rwam13" name="help.png" path="/UI/"/>
+    <image id="rwam14" name="overBg.png" path="/UI/" scale="9grid" scale9grid="16,16,32,32"/>
+    <image id="rwam15" name="total Score.png" path="/score/"/>
+    <image id="rwam16" name="btn_restart.png" path="/UI/"/>
+    <component id="rwam17" name="GameStart.xml" path="/" exported="true"/>
+    <image id="rwam1b" name="1.png" path="/UI/"/>
+    <image id="rwam1c" name="2.png" path="/UI/"/>
+    <component id="rwam1e" name="Button1.xml" path="/"/>
+    <image id="rwam1f" name="3.png" path="/UI/"/>
+    <image id="rwam1g" name="4.png" path="/UI/"/>
+    <component id="rwam1n" name="GameOver.xml" path="/" exported="true"/>
+    <component id="rwam1o" name="Button2.xml" path="/"/>
+  </resources>
+  <publish name="hitMole" path="C:\Users\admin\Desktop\HitMole\bin\res"/>
+</packageDescription>

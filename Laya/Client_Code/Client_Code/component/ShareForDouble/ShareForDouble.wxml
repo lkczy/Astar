@@ -1,0 +1,79 @@
+<!--component/ShareForDouble/ShareForDouble.wxml-->
+<view class='gift' wx:if='{{isShow}}'>
+  <view class="coin" wx:if="{{giftType == 'coin'}}">
+    <image src='/pages/images/fxdlb.png' class='gift-img'></image>
+    <view class='gift-coin-num-wrap'>
+      <view style='font-size: 60rpx'>{{coin}}</view>
+      <view>金 币</view>
+    </view>
+    <view class='gift-tips-wrap'  wx:if="{{status == '2'}}">
+      <view>分享到微信群可领取</view>
+      <image src='/pages/images/2B.png' class='gift-double-img' wx:if="{{times == 2}}"></image>
+      <image src='/pages/images/5B.png' class='gift-double-img' wx:elif="{{times == 5}}"></image>
+      <view>金币( {{coin * times}}金币)</view>
+    </view>
+    <button open-type="share" class='gift-share' data-type='coin'>领取礼包</button>
+
+    <view class='gift-get' bindtap='clickToGetCoin'>领取</view>
+  </view>
+
+  <view class="coin" wx:elif="{{giftType == 'lottery'}}">
+    <image src='/pages/images/fxdlb.png' class='gift-img'></image>
+    <view class='gift-coin-num-wrap'>
+      <view style='font-size: 60rpx'>{{coin}}次</view>
+      <view>抽奖</view>
+    </view>
+    <view class='gift-tips-wrap'  wx:if="{{status == '2'}}">
+      <view>分享到微信群可领取</view>
+      <image src='/pages/images/2B.png' class='gift-double-img'></image>
+      <view>抽奖次数({{coin * times}}次)</view>
+    </view>
+    <button open-type="share" class='gift-share' data-type='lottery'>领取礼包</button>
+    <view class='gift-get' bindtap='clickToGetLottery'>领取</view>
+  </view>
+
+  <view class="coin" wx:elif="{{giftType == 'ever'}}">
+    <view class='gift-ever-panel'>
+      <image src='https://cdn-xyx.raink.com.cn/njjjw/imgs/bt.png' class='gift-ever-title'></image>
+      <view class='gift-ever-text' style='margin-top: 20rpx' wx:if="{{status == '2'}}">
+        <text style='margin-right: 5rpx'>①</text> 分享给好友可获得
+        <text style='font-size: 35rpx; color: #C36F26'>20</text>金币
+      </view>
+      <view class='gift-ever-hb'>
+        <view style='margin-top: 46rpx; font-weight: bold; font-size: 25rpx; margin-left: 5rpx'>20</view>
+        <!-- <view>金币</view> -->
+      </view>
+      <view class='gift-ever-text' wx:if="{{status == '2'}}">
+        <text style='margin-right: 5rpx'>②</text> 分享到
+        <text style='font-weight: bold'>微信群</text>可获得
+        <image src='/pages/images/5B.png' style='margin-left: -10rpx;'></image>金币 
+        <text style='font-size: 35rpx; color: #C36F26'>100</text>
+      </view>
+      <view class='gift-ever-row'>
+        <view class='gift-ever-hb'>
+          <view style='margin-top: 46rpx; font-weight: bold; font-size: 25rpx; margin-left: 5rpx'>20</view>
+          <!-- <view>金币</view> -->
+        </view>
+        <view class='gift-ever-hb'>
+          <view style='margin-top: 46rpx; font-weight: bold; font-size: 25rpx; margin-left: 5rpx'>20</view>
+          <!-- <view>金币</view> -->
+        </view>
+        <view class='gift-ever-hb'>
+          <view style='margin-top: 46rpx; font-weight: bold; font-size: 25rpx; margin-left: 5rpx'>20</view>
+          <!-- <view>金币</view> -->
+        </view>
+        <view class='gift-ever-hb'>
+          <view style='margin-top: 46rpx; font-weight: bold; font-size: 25rpx; margin-left: 5rpx'>20</view>
+          <!-- <view>金币</view> -->
+        </view>
+        <view class='gift-ever-hb'>
+          <view style='margin-top: 46rpx; font-weight: bold; font-size: 25rpx; margin-left: 5rpx'>20</view>
+          <!-- <view>金币</view> -->
+        </view>
+      </view>
+      <view class='gift-ever-times'>今日还可领奖次数({{shareTimes}}次)</view>
+    </view>
+    <button open-type="share" class='gift-share' style='margin-top: 30rpx' data-type='coin{{shareType}}' >分享到微信群</button>
+    <view class='gift-get' bindtap='clickToGiveUp' style='margin-top: 20rpx'>领取</view>
+  </view>
+</view>

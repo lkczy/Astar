@@ -1,0 +1,99 @@
+/* pages/sub_pages/hwShop/hwShop.wxss */
+page {
+  background-color: #f6f6f6;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.goods-item {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.goods-item-wrap {
+  width: 360rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+}
+
+.goods-img {
+  width: 360rpx;
+  height: 360rpx;
+}
+
+.goods-name {
+  width: 355rpx;
+  font-size: 25rpx;
+  line-height: 30rpx;
+  height: 60rpx;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-top: 10rpx;
+}
+
+.coupon-money {
+  font-size: 20rpx;
+  background-color: #f7e47d;
+  text-align: center;
+  padding: 0rpx 5rpx;
+  border-top: 0.5rpx solid #333;
+  border-left: 0.5rpx solid #333;
+  border-bottom: 0.5rpx solid #333;
+  margin-left: 10rpx;
+}
+
+.coupon {
+  font-size: 20rpx;
+  text-align: center;
+  padding: 0rpx 5rpx;
+  border-top: 0.5rpx solid #333;
+  border-right: 0.5rpx solid #333;
+  border-bottom: 0.5rpx solid #333;
+  border-left: 0.5rpx dashed #333;
+}
+
+.sold-quantity {
+  font-size: 25rpx;
+  color: #c7c7c7;
+  flex: 1;
+  text-align: right;
+  margin-right: 10rpx;
+}
+
+.row-price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-top: 5rpx;
+  margin-bottom: 10rpx;
+}
+
+.yuan {
+  font-size: 20rpx;
+  color: #444;
+  margin-left: 10rpx;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #444;
+}

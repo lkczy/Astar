@@ -1,0 +1,81 @@
+<block wx:if='{{gzhday <= 0 && gzhlqday == 0}}'>
+  <view class='gzhgift' bindtap='showgzhmodel'>
+    <image class='gode' src='https://cdn-xyx.raink.com.cn/box_weixin/20190507150735004.png'></image>
+    <image class='gzjl' src='https://cdn-xyx.raink.com.cn/box_weixin/20190507150735008.png'></image>
+  </view>
+
+  <!-- <view class='warp' bindtap='closegzhmodel' wx:if='{{showgzhmodel}}'>
+    <view class='gzhgiftmodel' catchtap='empty' >
+      <view class='gzgzhjltitle'>
+        <text>关注公众号奖励</text>
+      </view>
+      <view class='giftcontent'>
+        <view class='giftcontenttitle'>
+          <text>金币</text>
+        </view>
+        <view class='giftcontentbody'>
+          <image class='globe' src='https://cdn-xyx.raink.com.cn/box_weixin/20190507150735005.png'></image>
+          <text>x300</text>
+        </view>
+      </view>
+      <view class='messageinfo'>需从公众号内进入游戏才可领取奖励呦！</view>
+      <view class='lqjl'  catchtap ='lqgzhjl'>领取奖励</view>
+    </view>
+  </view> -->
+
+  <!-- <view class='warp' bindtap='closeshowgzhinfomodel' wx:if='{{showgzhinfomodel}}'> -->
+    <view class='warp' bindtap='closegzhmodel' wx:if='{{showgzhmodel}}'>
+<!--
+    <view class='gzhgiftmodel1 gzhbackground'>
+
+    </view> 
+-->
+    <view class='gzhbackground'>
+          <text class='textline title'>关注公众号</text>
+      <text class='textline detail'>加入组织(找到有共同爱好的朋友)</text>
+      <text class='textline line1'>关注步骤:</text>
+      <text class='textline line2'>1.点击<text style='color:rgb(91,153,252);font-size: 32rpx;font-weight: 900;'>联系客服</text>,进入客服系统</text>
+      <text class='textline line3'>2.回复 "1"</text>
+      <text class='textline line4'>3.打开二维码,然后长按二维码,选择"识别图中二维码"</text>
+      <text class='textline line5'>4.点击<text style='color:rgb(91,153,252);font-size: 32rpx;font-weight: 900;'>关注公众号</text></text>
+      <!-- <text class='textline line6'>5.点击左下角的文字输入按钮，输入并发送"<text style='color:rgb(91,153,252);font-size: 32rpx;font-weight: 900;'>看图知成语</text>",点击进入游戏,在游戏内领取奖励.</text> -->
+      <!-- <text class='textline line6'>5.在下方成语列表中选择对应的游戏进入即可领取奖励</text> -->
+      <text class='textline line6'>5.在公众号下方输入"2",添加客服微信,客服会拉你到微信群</text>
+
+      <button open-type="contact" class='kefu'></button>
+    </view>
+  </view>
+</block>
+
+<!-- <block wx:if='{{gzhday > 0 && gzhlqday == 0 }}'>
+  <view class='gzhgift' bindtap='showdaymodel'>
+    <image class='gode' src='https://cdn-xyx.raink.com.cn/box_weixin/20190507150735004.png'></image>
+    <image class='gzjl' src='https://cdn-xyx.raink.com.cn/box_weixin/20190507150735011.png'></image>
+  </view>
+
+  <view class='warp' bindtap='closeshowdaymodel'  wx:if='{{showdaymodel}}'>
+    <view class='gzhgiftmodel' catchtap='empty'>
+      <view class='gzgzhjltitle'>
+        <text>关注公众号奖励</text>
+      </view>
+      <view class='giftcontent'>
+        <view class='giftcontenttitle'>
+          <text>金币</text>
+        </view>
+       
+        <view class='giftcontentbody'>
+          <image class='globe' src='https://cdn-xyx.raink.com.cn/box_weixin/20190507150735005.png'></image>
+          <text>x100</text>
+        </view>
+      </view>
+       <text style='color:rgb(255,92,64);font-size:20rpx;'>公众号内进入游戏才能领取奖励哦!</text>
+      <view class='lqjl' style='margin-top:25rpx;' catchtap='lqdayjl'>领取奖励</view>
+    </view>
+  </view>
+
+  <view class='warp'  bindtap='closeshowdayinfomodel' wx:if='{{showdayinfomodel}}'>
+    <view class='gzhgiftmodel1 daybackground'>
+
+    </view>
+  </view>
+</block> -->

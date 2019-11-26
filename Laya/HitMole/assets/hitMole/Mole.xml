@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="111,118">
+  <displayList>
+    <loader id="n0_jtpg" name="normal" xy="0,0" size="111,104" group="n2_jtpg"/>
+    <loader id="n1_jtpg" name="hit" xy="0,14" size="111,104" group="n2_jtpg"/>
+    <group id="n2_jtpg" name="Mole" xy="0,0" size="111,118"/>
+    <loader id="n4_gyfc" name="score1" xy="12,4" size="86,30"/>
+  </displayList>
+</component>

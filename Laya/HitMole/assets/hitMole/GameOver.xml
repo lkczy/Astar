@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="500,400">
+  <displayList>
+    <image id="n0_rwam" name="gameOver" src="rwam14" fileName="UI/overBg.png" xy="0,0" size="500,400"/>
+    <image id="n1_rwam" name="n1" src="rwam15" fileName="score/total Score.png" xy="34,59"/>
+    <component id="n2_rwam" name="restartBtn" src="rwam1o" fileName="Button2.xml" xy="171,291"/>
+    <text id="n3_rwam" name="score" xy="87,186" size="258,53" font="ui://7pbwzfamf5j3p" fontSize="48" align="right" letterSpacing="3" autoSize="none" text="0"/>
+  </displayList>
+</component>

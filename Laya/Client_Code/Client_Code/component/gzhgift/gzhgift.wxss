@@ -1,0 +1,260 @@
+/* component/gzhgift.wxss */
+
+.gzhgift {
+  width: 131rpx;
+  height: 80rpx;
+  background: url('https://cdn-xyx.raink.com.cn/box_weixin/20190507150735003.png');
+  background-size: 131rpx 88rpx;
+  position: fixed;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  top: 120rpx;
+  right: 0rpx;
+  animation: scale-animation 4200ms ease infinite;
+}
+
+@keyframes scale-animation {
+  7% {
+    transform: scale(1.2);
+  }
+
+  14% {
+    transform: scale(0.95);
+  }
+
+  21% {
+    transform: scale(1.15);
+  }
+
+  28% {
+    transform: scale(1);
+  }
+}
+
+.gode {
+  width: 97rpx;
+  height: 72rpx;
+  position: relative;
+  top: -12rpx;
+}
+
+.gzjl {
+  width: 113rpx;
+  height: 29rpx;
+  position: relative;
+  top: -10rpx;
+}
+
+.warp {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  z-index: 1;
+}
+
+.gzhgiftmodel {
+  width: 540rpx;
+  height: 605rpx;
+  border-radius: 20rpx;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgb(255, 239, 242);
+  margin-top: 100rpx;
+}
+
+.gzhgiftmodel1 {
+  width: 540rpx;
+  height: 741rpx;
+  border-radius: 20rpx;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgb(255, 239, 242);
+  margin-top: 100rpx;
+}
+
+
+
+.gzgzhjltitle {
+  width: 397rpx;
+  height: 86rpx;
+  background: url('https://cdn-xyx.raink.com.cn/cck/20190605001.png');
+  background-size: 397rpx 86rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 37rpx;
+  margin-top: -20rpx;
+}
+
+.giftcontent {
+  width: 230rpx;
+  height: 282rpx;
+  margin-top: 60rpx;
+}
+
+.giftcontenttitle {
+  width: 230rpx;
+  height: 70rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(49, 185, 161);
+  border-top-left-radius: 15rpx;
+  border-top-right-radius: 15rpx;
+  color: white;
+  font-size: 36rpx;
+}
+
+.giftcontentbody {
+  width: 230rpx;
+  height: 212rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(57, 201, 178);
+  border-bottom-left-radius: 15rpx;
+  border-bottom-right-radius: 15rpx;
+  flex-direction: column;
+  color: white;
+  font-size: 39rpx;
+}
+
+.globe {
+  width: 115rpx;
+  height: 118rpx;
+}
+
+.lqjl {
+  width: 300rpx;
+  height: 90rpx;
+/*  background: rgb(254, 187, 70);
+  border: rgb(241, 241, 143) solid 10rpx;*/
+  background: url('https://cdn-xyx.raink.com.cn/cck/20190605002.png');
+  background-size: 300rpx 90rpx;
+  color: white;
+  font-size: 42rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+  border-radius: 20rpx;
+}
+
+.gzhcontent {
+  width: 500rpx;
+  height: 490rpx;
+  margin-top: 50rpx;
+  background: rgb(248, 231, 203);
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-around;
+}
+
+.gzhbackground {
+  width: 540rpx;
+  height: 855rpx;
+  border-radius: 20rpx;
+  display: flex;
+/*  justify-items: center;
+  align-items: center;*/
+  flex-direction: column;
+  background: rgb(255, 239, 242);
+  margin-top: 100rpx;
+  background: url('https://cdn-xyx.raink.com.cn/cck/201907131557460.png');
+  background-size: 540rpx 855rpx;
+}
+
+.textline{
+  position: relative;
+  font-size: 30rpx;
+  width: 500rpx;
+  margin-left: 40rpx;
+}
+
+.title {
+  color: white;
+  font-size: 45rpx;
+  top: 13rpx;
+  left: 125rpx;
+}
+
+.detail {
+  color: rgb(91, 28, 18);
+  font-size: 29rpx;
+  top: 39rpx;
+  left: 15px;
+}
+
+.line1 {
+  font-size: 42rpx;
+  top: 70rpx;
+}
+
+.line2 {
+  top: 80rpx;
+}
+
+.line3 {
+  top: 100rpx;
+}
+
+.line4 {
+  top: 120rpx;
+  width: 250rpx;
+}
+
+.line5 {
+  top: 140rpx;
+}
+
+.line6 {
+  top: 170rpx;
+  width: 468rpx;
+}
+
+.kefu{
+  width: 296rpx;
+  height: 118rpx;
+  background: transparent;
+  position: relative;
+  top:180rpx;
+  left:123rpx;
+  padding: 0 0 0 0 ;
+  margin: 0 0 0 0 ;
+}
+
+.kefu::after{
+  border: 0rpx;
+}
+
+.daybackground {
+  background: url('https://cdn-xyx.raink.com.cn/cck/20190605004.png');
+  background-size: 540rpx 741rpx;
+}
+
+.messageinfo{
+width:240rpx;
+height:39rpx;
+display:flex;
+text-align:center;
+color:#5BC12;
+font-size:25rpx;
+font-weight:900;
+
+}

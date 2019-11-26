@@ -1,0 +1,5 @@
+<!-- <view> -->
+  <view class='more_warp'>
+    <image class='more_image' wx:if='{{index<4}}' src='{{item.image}}' wx:for='{{suggestList}}' wx:key='this' catchtap='adClick' data-item="{{item}}"></image>
+  </view>
+<!-- </view> -->

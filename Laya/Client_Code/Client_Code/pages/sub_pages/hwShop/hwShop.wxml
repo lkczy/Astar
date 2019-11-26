@@ -1,0 +1,21 @@
+<view class='wrap'>
+
+  <view class='goods-item' wx:for='{{goodsList}}' wx:for-item='item' wx:key='idx' bindtap='toDetail'>
+    <navigator class='goods-item-wrap' url='../hwShopDetail/hwShopDetail?id={{item.goods_id}}&position=商城'>
+      <image src='{{item.goods_thumbnail_url}}' class='goods-img'></image>
+      <view class='goods-name'>{{item.goods_name}}</view>
+      <view class='row'>
+        <text class='coupon-money'>{{item.coupon_discount/100}}元</text>
+        <text class='coupon'>优惠券</text>
+        <text class='sold-quantity'>销量: {{item.sold_quantity}}</text>
+      </view>
+      
+      <view class='row-price'>
+        <text class='yuan'>¥</text>
+        <text class='price'>{{(item.min_group_price - item.coupon_discount)/100}}</text>
+      </view>
+    </navigator>
+  </view>
+
+</view>
+

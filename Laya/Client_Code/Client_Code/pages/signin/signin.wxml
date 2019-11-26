@@ -1,0 +1,62 @@
+<!--help.wxml-->
+<view class="page">
+  <view class="content">
+    <view class='day_item' style='background-color: {{item_bg[0]}};'>
+      <view class='day_num' style='background-color: {{num_bg[0]}};color:{{font_color[0]}}'>第一天</view>
+      <view class='coin_num' style='color:{{font_color[0]}}'>20金币</view>
+    </view>
+
+    <view class='day_item' style='background-color: {{item_bg[1]}};'>
+      <view class='day_num' style='background-color: {{num_bg[1]}};color:{{font_color[1]}}'>第二天</view>
+      <view class='coin_num' style='color:{{font_color[1]}}'>40金币</view>
+    </view>
+
+    <view class='day_item' style='background-color: {{item_bg[2]}};'>
+      <view class='day_num' style='background-color: {{num_bg[2]}};color:{{font_color[2]}}'>第三天</view>
+      <view class='coin_num' style='color:{{font_color[2]}}'>60金币</view>
+    </view>
+
+    <view class='day_item' style='background-color: {{item_bg[3]}};'>
+      <view class='day_num' style='background-color: {{num_bg[3]}};color:{{font_color[3]}}'>第四天</view>
+      <view class='coin_num' style='color:{{font_color[3]}}'>80金币</view>
+    </view>
+
+    <view class='day_item' style='background-color: {{item_bg[4]}};'>
+      <view class='day_num' style='background-color: {{num_bg[4]}};color:{{font_color[4]}}'>第五天</view>
+      <view class='coin_num' style='color:{{font_color[4]}}'>100金币</view>
+    </view>
+
+
+    <view class='day_item' style='background-color: {{item_bg[5]}};'>
+      <view class='day_num' style='background-color: {{num_bg[5]}};color:{{font_color[5]}}'>第六天</view>
+      <view class='coin_num' style='color:{{font_color[5]}}'>120金币</view>
+    </view>
+
+    <view class='day_item' style='background-color: {{item_bg[6]}};'>
+      <view class='day_num' style='background-color: {{num_bg[6]}};color:{{font_color[6]}}'>第七天</view>
+      <view class='coin_num' style='color:{{font_color[6]}}'>140金币</view>
+    </view>
+
+    <block wx:if='{{openLevel=="0"}}'>
+      <button class="btn_hongbao" bindtap='onKnow' style='margin-top:30rpx;'>领取</button>
+    </block>
+    <block wx:else>
+      <view class='gift-tips-wrap' style='color: #333; font-weight: bold'>
+        <block wx:if='{{openLevel=="2"}}'>
+          <view>分享到
+          <text style='font-size: 36rpx'>微信群</text>可获得</view>
+          <image src='https://cdn-xyx.raink.com.cn/njjjw/imgs/2B.png' class='gift-double-img'></image>
+          <view>金币奖励</view>
+        </block>
+      </view>
+      <button open-type="share" wx:if='{{ShareOrVideo==2}}'  class="btn_hongbao" id='double'>领取金币</button>
+      <button bindtap='playvideo' wx:if='{{ShareOrVideo==1||ShareOrVideo==3}}'  class="btn_hongbao" id='double'>领取金币</button>
+      <view class="btn-give-up" bindtap='onKnow'>领取</view>
+    </block>
+    <view>
+     <ad class='ad' unit-id="adunit-5e730b1e0dce288c"></ad>
+     </view>
+
+  </view>
+   
+</view>

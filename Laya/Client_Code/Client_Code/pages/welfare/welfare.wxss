@@ -1,0 +1,212 @@
+/* pages/sub_pages/welfare/welfare.wxss */
+
+.list-wrap {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.5);
+  width: 90%;
+  border-radius: 20rpx;
+  margin: 20rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-wrap scroll-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 620rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  margin-top: 30rpx;
+}
+
+.slogin {
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  background: #a4a7a9;
+  color: #fee559;
+  padding: 5rpx 20rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  background: #a3abad;
+  border-radius: 20rpx;
+  margin-bottom: 10rpx;
+  margin-left: 2.5%;
+}
+
+.item-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20rpx;
+}
+
+.item-center {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+  color: white;
+  flex: 1;
+}
+
+.invited-button {
+  background: linear-gradient(to right, #fed146, #febe46);
+  color: white;
+  font-weight: bold;
+  width: 250rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 5rpx 0 #aaa;
+  height: 95rpx;
+}
+
+.item-avatar {
+  height: 100rpx;
+  width: 100rpx;
+  margin: 10rpx;
+  border-radius: 50rpx;
+}
+
+.real-avatar {
+  height: 95rpx;
+  width: 95rpx;
+  border-radius: 50rpx;
+  margin: 10rpx;
+  border: 5rpx solid white;
+}
+
+.share {
+  height: 100rpx;
+  width: 100rpx;
+  background: rgba(255, 255, 255, 0);
+  margin: 10rpx;
+  padding-left: 0 !important;
+  overflow: visible !important;
+}
+
+.share image {
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.share::after {
+  border: none;
+}
+
+.name {
+  color: white;
+  margin-bottom: 10rpx;
+  height: 40rpx;
+  font-size: 30rpx;
+  width: 100rpx;
+  overflow: hidden;
+}
+
+.get-coin-button {
+  width: 150rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: white;
+  font-weight: bold;
+  background: #C7C7C7;
+  font-size: 36rpx;
+  text-align: center;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 5rpx 0 #888;
+}
+
+.get {
+  width: 150rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: white;
+  font-weight: bold;
+  font-size: 36rpx;
+  text-align: center;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+
+page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wenhao {
+  height: 57rpx;
+  width: 57rpx;
+  position: absolute;
+  top: 30rpx;
+  right: 50rpx;
+}
+
+.shouInfo {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.pass-panel {
+  width: 80%;
+  background: #ececec;
+  border-radius: 10rpx;
+  color: #a2a2a2;
+  font-size: 32rpx;
+  border: 2rpx solid white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0rpx 5rpx 0rpx #333;
+}
+
+.pass-content {
+  background: #D5D5DF;
+  border-radius: 10rpx;
+  margin: 20rpx;
+  color: #333;
+}
+
+.pass-content view {
+  margin: 10rpx;
+}
+
+.head1 {
+  width: 100%;
+  background-color: #CBCBCB;
+  height: 70rpx;
+  border-top-left-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.head1 image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+}
+
+.head1 view {
+  flex: 1;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}

@@ -1,0 +1,340 @@
+/* component/hongBao/hongBao.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+
+
+.warp{
+	  width: 100%;
+	  height: 100%;
+	  background: rgba(0,0,0,0.5);
+	  position: fixed;
+	  top: 0;
+	  left:0;
+	  display: -webkit-flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: -webkit-center;
+	  z-index: 1;
+    
+}
+
+.main,.main1{
+  /* margin-top: 200rpx; */
+  width:648rpx;
+  height: 614rpx;
+  /* background: #fff; */
+  position: absolute;
+  /* top:180rpx; */
+  top: 150rpx;
+
+}
+.main1{
+  margin-top: 160rpx;
+  width: 634rpx;
+  height: 724rpx;
+}
+.hongbaoBg{
+  width: 100%;
+  height: 100%;
+}
+.hongbao{
+  width: 100%;
+  height: 100%;
+}
+.reward{
+  width: 100%;
+  height: 100%;
+}
+.clearIcon {
+  position: absolute;
+  width: 54rpx;
+  height: 54rpx;
+  right: -10rpx;
+  top: 135rpx;
+}
+
+.clearIcon1{
+  position: absolute;
+  width: 54rpx;
+  height: 54rpx;
+  right: -10rpx;
+  top: 150rpx;
+}
+
+.cleartext{
+  position: absolute;
+  right: -10rpx;
+  bottom: -160rpx;
+  color: white;
+  text-decoration: underline ;
+}
+.cleartext1{
+  position: absolute;
+  right:30rpx;
+  top:880rpx;
+  color: white;
+  text-decoration: underline ;
+}
+
+.clearIcon1{
+  right: -10rpx;
+  top: -50rpx;
+
+}
+.choujiang{
+  width: 391rpx;
+  height: 122rpx;
+  position: absolute;
+  bottom: -36rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0;
+  margin:0;
+  background-color: transparent;
+}
+.choujiang_img{
+  width: 100%;
+  height: 100%;
+}
+.zuigao{
+  font-size: 40rpx;
+  line-height: 100rpx;
+  color: #746262;
+  display: block;
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.xingyun{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 260rpx;
+  display: flex;
+}
+.xingyun_img{
+  display: block;
+  width: 298rpx;
+  height: 49rpx;
+}
+.xingyun_text{
+  margin-left: 20rpx;
+  font-size: 40rpx;
+  color: #e44f3f;
+}
+.gongxiTitle{
+  width: 138rpx;
+  height: 55rpx;
+  position: absolute;
+  left: 50%;
+  top: 20rpx;
+  transform: translateX(-50%);
+}
+.kaiIcon{
+  width: 195rpx;
+  height: 204rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 150rpx;
+}
+.hongbaoTit{
+  color: #822d2d;
+  font-size: 34rpx;
+  position: absolute;
+  width: 100%;
+  display: block;
+  text-align: center;
+  top: 85rpx;
+  font-weight: bold;
+}
+.hongbaoPric{
+  width: 100%;
+  color: #f00;
+  font-size: 50rpx;
+  position: absolute;
+  text-align: center;
+  bottom: 28rpx;
+  left: 0;
+  /* -webkit-text-stroke: 2rpx #fff; */
+  /* text-stroke: 2rpx #fff; */
+  text-shadow: 0 1px #fff, 1px 0 #fff, -1px 0 #fff, 0 -1px #fff;
+  font-weight: bold;
+}
+.hongbaoMoneyBox{
+  display: flex;
+  height: 147rpx;
+  justify-content: center;
+  align-items: flex-end;
+  color: #b8170f;
+  position: absolute;
+  top: 70rpx;
+  width: 100%;
+
+}
+.hongbaoMoney1{
+  font-size: 95rpx;
+  line-height: 147rpx;
+}
+.hongbaoMoney2{
+  font-size: 100rpx;
+  /* font-weight: bold; */
+}
+.examineText{
+  font-size: 36rpx;
+  color: #c12524;
+  text-decoration: underline;
+  position: absolute;
+  padding: 20rpx;
+  /* width: 290rpx; */
+  display: block;
+  bottom: 67rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  /* font-weight: bold; */
+}
+.hit{
+  font-size: 32rpx;
+  /* font-weight: bold; */
+  color: #e77f71;
+  position: absolute;
+  bottom: 30rpx;
+  text-align: center;
+  width: 100%;
+  left: 0;
+  line-height: 70rpx;
+  display: block;
+}
+.chakanJiangli{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 361rpx;
+  height: 87rpx;
+  bottom: 100rpx;
+  display: block;
+}
+
+.close-btn {
+  width: 67rpx;
+  height: 69rpx;
+  margin-left: 600rpx;
+  z-index: 10;
+  position:relative;
+  top:95rpx;
+
+}
+
+.goods-list {
+  width:634rpx;
+  background-color: #c64d34;
+  border-radius: 10rpx;
+  box-shadow: 5rpx 5rpx 5rpx #333;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 775rpx;
+  margin: -30rpx;
+  top: 85rpx;
+}
+
+.title {
+  width: 499rpx;
+  height: 117rpx;
+  margin-top: -60rpx;
+}
+.s-title {
+  font-size: 25rpx;
+  color: #fff;
+  margin-top: -5rpx;
+}
+.goods-item {
+  width: 600rpx;
+  height: 170rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  border: 4rpx solid #953421;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+}
+
+
+.goods-img {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 10rpx;
+}
+
+
+.goods-name-price-wrap {
+  height: 150rpx;
+  flex: 1;
+  margin: 10rpx 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.goods-name {
+  font-size: 20rpx;
+  color: #333;
+  flex: 1;
+}
+.old-price {
+  font-size: 20rpx;
+  color: #888;
+}
+.new-price {
+  font-size: 20rpx;
+  color: #e03f37;
+}
+
+.baoyou {
+  width: 122rpx;
+  height: 81rpx;
+  margin-top: -81rpx;
+  align-self: flex-end;
+}
+
+.coupon-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.coupon-img {
+  width: 141rpx;
+  height: 152rpx;
+  margin: 10rpx;
+}
+.coupon {
+  font-size: 30rpx;
+  color: #f35949;
+  margin-top: -110rpx;
+}
+
+.change {
+  margin: 20rpx 0;
+  width: 301rpx;
+  height: 90rpx;
+}
+
+.change-text {
+  font-size: 25rpx;
+  color: #fff;
+  margin-top: -60rpx;
+}
+
+.videoicon{
+position:absolute;
+top:28rpx;
+width:50rpx;
+height:50rpx;
+left:35rpx;
+
+}

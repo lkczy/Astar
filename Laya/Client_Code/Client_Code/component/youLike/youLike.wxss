@@ -1,0 +1,14 @@
+/* component/youLike/youLike.wxss */
+.more_warp{
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+  padding: 20rpx;
+  border:8rpx solid #fff;
+  border-radius: 15rpx;
+  margin: 0 auto;
+}
+.more_image{
+  width: 120rpx;
+  height: 120rpx;
+}

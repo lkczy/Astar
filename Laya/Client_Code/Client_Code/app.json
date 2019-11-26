@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/fight/fight",
+    "pages/play/play",
+    "pages/jiecy/jiecy",
+    "pages/overFight/overFight",
+    "pages/sel/sel",
+    "pages/level/level",
+    "pages/signin/signin",
+    "pages/number/number",
+    "pages/numberSel/numberSel",
+    "pages/numberPlay/numberPlay",
+    "pages/prepare/prepare",
+    "pages/pay/pay",
+    "pages/complaint/complaint",
+    "pages/sub_pages/hwShop/hwShop",
+    "pages/sub_pages/hwShopDetail/hwShopDetail",
+    "pages/welfare/welfare"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e9accd",
+    "navigationBarTitleText": "成语猜猜看",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#000000"
+  },
+  "usingComponents": {},
+  "navigateToMiniProgramAppIdList": [
+    "wx37d3d0dc7eb63354",
+    "wx192d0eb286a81096",
+    "wx50fdc05007e193cc",
+    "wx776f8e75a5858a0a",
+    "wx11038779ab1e4946",
+    "wxb7f18b9cddf1f546",
+    "wxd948b79109a8cb77",
+    "wx234ee01d3f70d7d8",
+    "wx05c68079dc618074",
+    "wx32540bd863b27570"
+  ],
+  "sitemapLocation": "sitemap.json",
+  "navigationBarTiyleTextzhong":"成语猜猜看"
+}

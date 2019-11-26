@@ -1,0 +1,123 @@
+<!--play.wxml-->
+<scroll-view scroll-y style='height:100%;'>
+<import src="../../component/CusToast/CusToast.wxml" />
+<template is="toast" data="{{ ..._toast_ }}" />
+
+<view class="page">
+
+  <view class='group'>
+    <view class='up-group' style="background-image: url('http://xcxcy.oss-cn-hangzhou.aliyuncs.com/cycck/icon/caitusbj.png');background-size: 100% 100%;">
+
+      <!--头部-->
+      <view class='header' style="background-image: url('http://xcxcy.oss-cn-hangzhou.aliyuncs.com/cycck/icon/lev3.png');background-size: 100% 100%;">
+        <view class='header-content'>{{cur_turn_level}}</view>
+      </view>
+
+      <!-- 设置级别-->
+      <view class='main-img'>
+        <image class='main-img-src' mode='aspectFit' src="{{main_img_url}}"></image>
+      </view>
+      <view class='helper'>
+        <button wx:if="{{total_point>=30 || state==0}}" class='helper-tips' bindtap="showTips">提 示</button>
+        <button wx:elif='{{ShareOrVideo==2}}' class='helper-tips' open-type="share" id="showtips">提 示</button>
+        <button wx:elif='{{ShareOrVideo==1||ShareOrVideo==3}}' bindtap='playvideo' class='helper-tips' id="showtips">提 示
+        <image src='https://cdn-xyx.raink.com.cn/dyjl/20190701001.png' class='videoicon'></image>
+        </button>
+
+        <!-- <button class='helper-free' bindtap='addPoint' wx:if="{{pointAdd}}">更多金币</button> -->
+        <!-- <button class='helper-free' open-type="share">求 助</button> -->
+        <button class='helper-share' open-type="share" wx:if='{{state==0}}'>分 享</button>
+        <button class='helper-share' bindtap='tofuli' wx:if='{{state!=0}}' >福 利</button>
+      </view>
+    </view>
+
+  </view>
+
+  <view class='mid-group'>
+    <view class='mid-group-1'>
+      <view class='center-group'>
+        <button data-item="0" bindtap="clickAns" class='ans-items' style="background:{{ans[0]==24?'#c0c0c0':'#e0b77a'}};background-size: 100% 100%;">{{array[ans[0]]}}</button>
+        <button data-item="1" bindtap="clickAns" class='ans-items' style="background:{{ans[1]==24?'#c0c0c0':'#e0b77a'}};background-size: 100% 100%;">{{array[ans[1]]}}</button>
+        <button data-item="2" bindtap="clickAns" class='ans-items' style="background:{{ans[2]==24?'#c0c0c0':'#e0b77a'}};background-size: 100% 100%;">{{array[ans[2]]}}</button>
+        <button data-item="3" bindtap="clickAns" class='ans-items' style="background:{{ans[3]==24?'#c0c0c0':'#e0b77a'}};background-size: 100% 100%;">{{array[ans[3]]}}</button>
+      </view>
+
+      <view bindtap="getPoint" class='mid-right-group'>
+        <image class='point-left' src='../../imgs/comm/jiangjinbi.png'></image>
+        <view class='point-num'>{{total_point}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='flex-group'>
+    <view class="flex-wrp" style="flex-direction:row;">
+      <button class="flex-item" style="visibility:{{!array_show[0]?'hidden':'show'}}" data-item="0" bindtap="clickItem">{{array[0]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[1]?'hidden':'show'}}" data-item="1" bindtap="clickItem">{{array[1]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[2]?'hidden':'show'}}" data-item="2" bindtap="clickItem">{{array[2]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[3]?'hidden':'show'}}" data-item="3" bindtap="clickItem">{{array[3]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[4]?'hidden':'show'}}" data-item="4" bindtap="clickItem">{{array[4]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[5]?'hidden':'show'}}" data-item="5" bindtap="clickItem">{{array[5]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[6]?'hidden':'show'}}" data-item="6" bindtap="clickItem">{{array[6]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[7]?'hidden':'show'}}" data-item="7" bindtap="clickItem">{{array[7]}}</button>
+    </view>
+    <view class="flex-wrp" style="flex-direction:row;">
+      <button class="flex-item" style="visibility:{{!array_show[8]?'hidden':'show'}}" data-item="8" bindtap="clickItem">{{array[8]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[9]?'hidden':'show'}}" data-item="9" bindtap="clickItem">{{array[9]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[10]?'hidden':'show'}}" data-item="10" bindtap="clickItem">{{array[10]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[11]?'hidden':'show'}}" data-item="11" bindtap="clickItem">{{array[11]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[12]?'hidden':'show'}}" data-item="12" bindtap="clickItem">{{array[12]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[13]?'hidden':'show'}}" data-item="13" bindtap="clickItem">{{array[13]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[14]?'hidden':'show'}}" data-item="14" bindtap="clickItem">{{array[14]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[15]?'hidden':'show'}}" data-item="15" bindtap="clickItem">{{array[15]}}</button>
+    </view>
+
+    <view class="flex-wrp" style="flex-direction:row;">
+      <button class="flex-item" style="visibility:{{!array_show[16]?'hidden':'show'}}" data-item="16" bindtap="clickItem">{{array[16]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[17]?'hidden':'show'}}" data-item="17" bindtap="clickItem">{{array[17]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[18]?'hidden':'show'}}" data-item="18" bindtap="clickItem">{{array[18]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[19]?'hidden':'show'}}" data-item="19" bindtap="clickItem">{{array[19]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[20]?'hidden':'show'}}" data-item="20" bindtap="clickItem">{{array[20]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[21]?'hidden':'show'}}" data-item="21" bindtap="clickItem">{{array[21]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[22]?'hidden':'show'}}" data-item="22" bindtap="clickItem">{{array[22]}}</button>
+      <button class="flex-item" style="visibility:{{!array_show[23]?'hidden':'show'}}" data-item="23" bindtap="clickItem">{{array[23]}}</button>
+    </view>
+  </view>
+
+
+  
+<!-- 
+  <view id='lucybag' class='lucybox' wx:if='{{lucyBagLv<=3}}' >
+    <image src='https://cdn-xyx.raink.com.cn/box_weixin/201901251403666.png' wx:if="{{remainingTime!='00:00:00'}}" class='lucyimage'></image>
+     <image src='https://cdn-xyx.raink.com.cn/box_weixin/201901281439568.gif' bindtap='openhongbao' wx:if="{{remainingTime=='00:00:00'}}" class='lucyimage'></image>
+     <view class='lucytime'>{{remainingTime}}</view>
+  </view> -->
+
+  <view class='cytzbox'  wx:if='{{cytzstate}}'>
+    <image bindtap='tocytz' src='https://cdn-xyx.raink.com.cn/box_weixin/20190308001.gif' class='cytzimg' ></image>
+  </view>
+
+</view>
+</scroll-view>
+<!-- 新手大礼包  -->
+<newUserGift wx:if="{{newUserGift}}" coin="{{newUserGiftCoinNum}}"  bindplayvideo='playvideo' ShareOrVideo='{{ShareOrVideo}}' bindnewusergift="newUserGiftReward" />
+<!-- <newUserGift wx:if="{{true}}" coin="{{newUserGiftCoinNum}}" marginbottom='{{marginbottom}}' bindnewusergift="newUserGiftReward" /> -->
+
+<!-- 日常大礼包 -->
+<!-- <dayUserGift wx:if="{{dayUserGift}}" coin="{{dayUserGiftCoinNum}}" binddayusergift="dayUserGiftReward" /> -->
+<dayUserGift wx:if="{{dayUserGift}}" coin="{{dayUserGiftCoinNum}}"  bindplayvideo='playvideo' ShareOrVideo='{{ShareOrVideo}}' marginbottom='{{marginbottom}}' binddayusergift="dayUserGiftReward" />
+
+<!-- 浮标广告 -->
+<view wx:if="{{cnxhstate}}" style='width:100rpx;position:fixed;z-index:999;top:250rpx;left:10rpx;'>
+  <adv game-id='1' game-path='cck' adv-type='icon' bindclick='advReward'></adv>
+</view>
+<dialog id='dialog' cancelShow='none' confirmShow='show' bindconfirm='dialogConfirmTap' ></dialog>
+<!-- 确定按钮 -->
+<!-- <text class='nextlevel' style='top:{{nextbottom}}rpx;' wx:if='{{shownext}}' bindtap='dialogConfirmTap'>下一关</text> -->
+<!-- 红包窗口 -->
+<hongBao id='hongBao' bindgetpdddataerr='tongguanShowFn' bindplayvideo='playvideo' ShareOrVideo='{{ShareOrVideo}}' userid='{{userid}}' gameid='1'></hongBao>
+
+<view class="bottom" wx:if='{{showhwPddYouLike}}' style="top:{{adtop}}rpx;">
+    <!-- <ad style="position: fixed;top:960rpx;z-index:9999" unit-id="adunit-a5bdab865b40d37f"></ad> -->
+     <hwPddYouLike adId='adunit-a5bdab865b40d37f' cnxhstate='{{cnxhstate}}'  isShowWx='{{isShowWx}}' userid='{{userid}}' gameid='1' position='主要玩法界面'/>
+  </view>
+  
